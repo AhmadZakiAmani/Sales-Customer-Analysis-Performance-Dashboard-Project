@@ -1,4 +1,4 @@
-# 📈 Sales & Customer Performance Analysis
+# 📠 Sales & Customer Performance Analysis
 
 🌐 Languages: [English](#english-version) | [Bahasa Indonesia](#versi-bahasa-indonesia)
 
@@ -107,6 +107,25 @@ These requirements apply to both the Sales and Customer dashboards.
 - Ensure the business is effectively converting new customers into loyal, profitable buyers.
 
 ---
+## 📂 Repository Structure
+```
+/
+├── datasets/                              # Contains raw datasets used for the project
+│    └── Customers.csv
+|    └── Location.csv
+|    └── Orders.csv
+|    └── Production.csv
+│
+├── docs/                                  # Contains project documentation, reports, or dashboard exports
+│    └── Sales & Customer Dashboard.pdf
+│
+├── tableau/                               # Contains files related to the Tableau visualization
+│    └── Sales & Customer Dasahboard.twbx 
+│
+└── README.md                              # Project description and portfolio details
+```
+
+---
 ## 🙍 About Me  
 
 Hi, I'm **Ahmad Zaki Amani** 👋  
@@ -125,3 +144,152 @@ Hi, I'm **Ahmad Zaki Amani** 👋
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/ahmad-zaki-amani-ab091635b/)  
 
 ---
+
+## Versi Bahasa Indonesia
+
+Selamat datang di repositori **Analisis Kinerja Penjualan & Pelanggan** 🚀
+
+Proyek ini menampilkan alur kerja **End-to-End Data Analytics**, yang berfokus pada transformasi data penjualan dan pelanggan mentah menjadi laporan **Business Intelligence (BI)** yang dapat ditindaklanjuti. Analisis ini menyajikan gambaran metrik penjualan serta tren, termasuk perbandingan **Year-over-Year (YoY)** terhadap kinerja tahun sebelumnya (PY).
+
+**Jenis Proyek**: End-to-End Data Analytics & Business Intelligence.
+
+**Alat yang Digunakan**: Excel (CSV) dan Tableau untuk visualisasi.
+
+---
+
+## 📌 Permasalahan
+
+Saat ini, data inti bisnis sering tersebar di berbagai sistem (transaksi penjualan, data pelanggan, persediaan), sehingga sulit bagi manajemen untuk menghubungkan kinerja keuangan dengan perilaku pelanggan.
+
+Berdasarkan tampilan dashboard, masalah utama yang dipecahkan adalah:
+
+* **Pemantauan Kinerja yang Terfragmentasi** → Laporan tradisional memisahkan angka penjualan dari aktivitas pelanggan, sehingga sulit melihat kesehatan bisnis secara menyeluruh.
+* **Sulit Mengukur Pendorong Pertumbuhan** → Sulit mengukur pertumbuhan YoY pada **Penjualan (20,4%), Laba (12,5%)**, dan **Total Pelanggan (8,6%)** untuk menilai momentum bisnis.
+* **Kurangnya Kejelasan Profitabilitas** → Tanpa pandangan menyeluruh, sulit mengidentifikasi subkategori produk yang menyumbang laba tinggi (misalnya **Phones**) dan produk yang merugikan (misalnya **Tables**).
+* **Analisis Loyalitas Pelanggan yang Tidak Terstruktur** → Bisnis kesulitan mengidentifikasi pelanggan loyal dan melakukan segmentasi. Dashboard langsung menampilkan konsentrasi pelanggan dengan sedikit pesanan (200 pelanggan hanya 1–2 pesanan), sekaligus menyoroti pelanggan bernilai tinggi (misalnya **Raymond Buch** sebagai penyumbang laba terbesar).
+* **Keterlambatan Deteksi Tren** → Fluktuasi mingguan/harian sulit dilacak. Grafik **Tren Penjualan & Laba dari Waktu ke Waktu** membantu mendeteksi anomali (di atas/bawah rata-rata) secara cepat dan responsif.
+* **Keputusan yang Kurang Terarah** → Manajemen sebelumnya tidak memiliki data yang cukup untuk strategi fokus. Dengan tampilan terintegrasi, kini keputusan dapat berbasis data: optimasi stok (mengurangi produk merugi) dan program loyalitas pelanggan (Top 10 Customers by Profit).
+
+---
+
+## 🎯 Kebutuhan Bisnis
+
+Pihak terkait di bidang **Penjualan, Keuangan, dan Pemasaran** membutuhkan dashboard terintegrasi untuk memantau pertumbuhan tahunan, profitabilitas produk, serta perilaku pelanggan dari berbagai dimensi.
+
+Berdasarkan tampilan dashboard, kebutuhan bisnis meliputi:
+
+---
+
+## 💰 **Halaman Penjualan (Sales Page)**
+
+Fokus pada KPI keuangan dan kinerja produk.
+
+**A. Ringkasan KPI Utama:**
+
+* Menyajikan Total Penjualan, Total Laba, dan Total Kuantitas untuk Tahun Berjalan (CY) dan Tahun Sebelumnya (PY).
+* Menampilkan Persentase Perubahan KPI saat membandingkan CY vs. PY (contoh: Penjualan Δ 20,4% vs. PY).
+
+**B. Analisis Tren Penjualan & Laba:**
+
+* Menampilkan tren bulanan untuk Penjualan, Laba, dan Kuantitas (CY vs. PY).
+* Menyoroti Bulan Tertinggi dan Bulan Terendah secara jelas.
+
+**C. Perbandingan Subkategori Produk:**
+
+* Membandingkan kinerja penjualan antar Subkategori Produk (CY vs. PY).
+* Menyertakan perbandingan Penjualan dan Laba/Rugi per subkategori.
+
+**D. Tren Mingguan Penjualan & Laba:**
+
+* Menampilkan data mingguan Penjualan dan Laba untuk Tahun Berjalan.
+* Menyajikan nilai Rata-rata Mingguan (misalnya Penjualan \$14K, Laba \$2K).
+* Menyoroti performa mingguan yang di atas atau di bawah rata-rata.
+
+---
+
+## 👤 **Halaman Pelanggan (Customer Page)**
+
+Fokus pada keterlibatan dan segmentasi pelanggan.
+
+**A. KPI Pelanggan:**
+
+* Melacak jumlah Total Pelanggan, Total Penjualan per Pelanggan, dan Total Pesanan.
+* Menampilkan Persentase Perubahan KPI (contoh: Total Orders Δ 28,3% vs. PY).
+
+**B. Analisis Tren Pelanggan:**
+
+* Menyajikan tren bulanan untuk Total Pelanggan dan Total Pesanan (CY vs. PY).
+* Menyoroti Bulan Tertinggi dan Bulan Terendah.
+
+**C. Distribusi Loyalitas Pelanggan:**
+
+* Menampilkan distribusi pelanggan berdasarkan jumlah pesanan (contoh: 200 pelanggan hanya 1 pesanan, 200 pelanggan dengan 2 pesanan).
+
+**D. Top 10 Pelanggan Bernilai Tinggi:**
+
+* Daftar 10 Pelanggan Teratas berdasarkan Laba.
+* Tabel berisi Peringkat Pelanggan, Tanggal Pesanan Terakhir, Laba 2024, Penjualan 2024, dan Jumlah Pesanan.
+
+---
+
+## ⚙️ Persyaratan Desain & Interaktivitas
+
+**A. Dashboard Dinamis:**
+
+* Memungkinkan pengguna memilih tahun (contoh: 2024 vs. 2023).
+* Navigasi mudah antar dashboard (misalnya tombol/menu khusus).
+* Grafik interaktif: klik visual untuk filter data.
+
+**B. Penyaringan Data:**
+
+* Filter berdasarkan Informasi Produk (Kategori & Subkategori).
+* Filter berdasarkan Informasi Lokasi (Provinsi & Kota).
+
+---
+
+👉 Dengan struktur ini, stakeholder bisnis dapat:
+
+* Memantau performa keuangan & pelanggan secara menyeluruh.
+* Membuat keputusan berbasis data terkait strategi produk, optimasi persediaan, dan program loyalitas.
+* Memastikan pelanggan baru dapat diubah menjadi pelanggan loyal & menguntungkan.
+
+---
+
+## 📂 Struktur Repository
+
+```
+/
+├── datasets/                              # Dataset mentah yang digunakan dalam proyek
+│    └── Customers.csv
+|    └── Location.csv
+|    └── Orders.csv
+|    └── Production.csv
+│
+├── docs/                                  # Dokumentasi proyek, laporan, atau export dashboard
+│    └── Dashboard Penjualan & Pelanggan.pdf
+│
+├── tableau/                               # File terkait visualisasi Tableau
+│    └── Dashboard Penjualan & Pelanggan.twbx 
+│
+└── README.md                              # Deskripsi proyek & detail portofolio
+```
+
+---
+
+## 🙍 Tentang Saya
+
+Halo, saya **Ahmad Zaki Amani** 👋
+
+✨ Saya fokus pada **Data Analytics** dan **Business Intelligence**, terutama membangun dashboard, membuat visualisasi data, dan mengubah data mentah menjadi insight yang bermanfaat.
+
+💡 Proyek ini adalah bagian dari portofolio saya, dengan keahlian dalam:
+
+* Visualisasi data & storytelling
+* Desain dashboard (Power BI, Tableau)
+* Transformasi & analisis data
+* Solusi Business Intelligence
+
+📫 Mari terhubung & berkolaborasi!
+
+[![Gmail](https://img.shields.io/badge/Gmail-D14836?style=for-the-badge\&logo=gmail\&logoColor=white)](mailto:ahmadzaki27.az@gmail.com)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge\&logo=linkedin\&logoColor=white)](https://www.linkedin.com/in/ahmad-zaki-amani-ab091635b/)
