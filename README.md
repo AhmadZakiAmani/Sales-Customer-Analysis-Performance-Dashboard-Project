@@ -1,8 +1,8 @@
-    🌐 Languages: [English](#english-version) | [Bahasa Indonesia](#indonesian-version)
+🌐 Languages: [English](#english-version) | [Bahasa Indonesia](#indonesian-version)
     
-    ---
-    <a name="english-version"></a>
-    # 📠 Sales & Customer Performance Analysis
+---
+<a name="english-version"></a>
+# 📠 Sales & Customer Performance Analysis
 
 Welcome to the **Sales & Customer Performance Analysis Project** repository 🚀
 
