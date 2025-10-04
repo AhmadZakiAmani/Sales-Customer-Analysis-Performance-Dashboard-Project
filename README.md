@@ -146,7 +146,7 @@ Hi, I'm **Ahmad Zaki Amani** 👋
 🌐 Languages: [English](#english-version) | [Bahasa Indonesia](#indonesian-version)
 
 ---
-<a name="#indonesian-version"></a>
+<a name="#indonesian-version)"></a>
 # 📠 Analisis Kinerja Penjualan & Pelanggan
 
 Selamat datang di repositori **Analisis Kinerja Penjualan & Pelanggan** 🚀
