@@ -1,9 +1,8 @@
-# 📠 Sales & Customer Performance Analysis
-
-🌐 Languages: [English](#english-version) | [Bahasa Indonesia](#versi-bahasa-indonesia)
-
----
-## English Version
+    🌐 Languages: [English](#english-version) | [Bahasa Indonesia](#indonesian-version)
+    
+    ---
+    <a name="english-version"></a>
+    # 📠 Sales & Customer Performance Analysis
 
 Welcome to the **Sales & Customer Performance Analysis Project** repository 🚀
 
@@ -144,8 +143,11 @@ Hi, I'm **Ahmad Zaki Amani** 👋
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/ahmad-zaki-amani-ab091635b/)  
 
 ---
+🌐 Languages: [English](#english-version) | [Bahasa Indonesia](#indonesian-version)
 
-## Versi Bahasa Indonesia
+---
+<a name="#indonesian-version"></a>
+# 📠 Analisis Kinerja Penjualan & Pelanggan
 
 Selamat datang di repositori **Analisis Kinerja Penjualan & Pelanggan** 🚀
 
