@@ -1,0 +1,69 @@
+// ===================================
+// ORDERS-METRICS
+// ===================================
+
+----------------------------------------------------------------------
+A. DEFINISI PARAMETER YEAR
+----------------------------------------------------------------------
+
+Nama Parameter: 
+Select Year
+
+Tipe Data: 
+Integer
+
+Nilai yang Diizinkan (Allowable Values): 
+List
+- 2021
+- 2022
+- 2023
+- 2024
+
+Tujuan:
+Menyediakan kontrol dropdown atau slider bagi pengguna untuk memilih tahun analisis di dasbor.
+
+----------------------------------------------------------------------
+B. CALCULATED FIELDS ORDERS
+----------------------------------------------------------------------
+
+// ------------------------------------
+// Calculated Field: Current Year
+// Desc: Untuk menentukan tahun yang dipilih pada parameter (Current Year/CY)
+[Select Year]
+// ------------------------------------
+
+// ------------------------------------
+// Calculated Field: Previous Year
+// Desc: Untuk menentukan tahun sebelumnya yang dipilih pada saat memilih tahun pada parameter (Previous Year/PY)
+[Select Year]-1
+// ------------------------------------
+
+// ------------------------------------
+// Calculated Field: CY Orders
+// Desc: Mengisolasi dan mengembalikan total pengiriman HANYA untuk tahun yang dipilih pada parameter [Select Year].
+IF YEAR([Order Date]) = [Select Year] THEN [Order ID]
+END
+// ------------------------------------
+
+// ------------------------------------
+// Calculated Field: PY Orders
+// Desc: Mengisolasi dan mengembalikan total pengiriman HANYA untuk tahun SEBELUM tahun yang dipilih pada parameter [Select Year].
+IF YEAR([Order Date]) = [Select Year]-1 THEN [Order ID]
+END
+// ------------------------------------
+
+// ------------------------------------
+// Calculated Field: % Diff Orders
+// Desc: Menghitung persentase pertumbuhan atau penurunan total pengiriman Year-over-Year (YoY) antara tahun yang dipilih (CY) dengan tahun sebelumnya (PY).
+(COUNTD([CY Orders]) - COUNTD([PY Orders])) / COUNTD([PY Orders])
+// -----------------------------------
+
+// ------------------------------------
+// Calculated Field: Highlight Max/Min Profit
+// Desc: Mengisolasi dan menampilkan nilai HANYA untuk titik data tertinggi (maksimum) dan terendah (minimum) dalam sebuah visualisasi.
+IF COUNTD([CY Orders]) = WINDOW_MAX(COUNTD([CY Orders]))
+THEN COUNTD([CY Orders])
+ELSEIF COUNTD([CY Orders]) = WINDOW_MIN(COUNTD([CY Orders]))
+THEN COUNTD([CY Orders])
+END
+// ------------------------------------
