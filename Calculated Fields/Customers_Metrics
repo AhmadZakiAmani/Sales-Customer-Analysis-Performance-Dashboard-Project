@@ -1,0 +1,69 @@
+// ===================================
+// QUANTITY-METRICS
+// ===================================
+
+----------------------------------------------------------------------
+A. DEFINISI PARAMETER YEAR
+----------------------------------------------------------------------
+
+Nama Parameter: 
+Select Year
+
+Tipe Data: 
+Integer
+
+Nilai yang Diizinkan (Allowable Values): 
+List
+- 2021
+- 2022
+- 2023
+- 2024
+
+Tujuan:
+Menyediakan kontrol dropdown atau slider bagi pengguna untuk memilih tahun analisis di dasbor.
+
+----------------------------------------------------------------------
+B. CALCULATED FIELDS QUANTITY
+----------------------------------------------------------------------
+
+// ------------------------------------
+// Calculated Field: Current Year
+// Desc: Untuk menentukan tahun yang dipilih pada parameter (Current Year/CY)
+[Select Year]
+// ------------------------------------
+
+// ------------------------------------
+// Calculated Field: Previous Year
+// Desc: Untuk menentukan tahun sebelumnya yang dipilih pada saat memilih tahun pada parameter (Previous Year/PY)
+[Select Year]-1
+// ------------------------------------
+
+// ------------------------------------
+// Calculated Field: CY Customers
+// Desc: Mengisolasi dan mengembalikan total pelanggan HANYA untuk tahun yang dipilih pada parameter [Select Year].
+IF YEAR([Order Date]) = [Select Year] THEN [Customers]
+END
+// ------------------------------------
+
+// ------------------------------------
+// Calculated Field: PY Customers
+// Desc: Mengisolasi dan mengembalikan total pelanggan HANYA untuk tahun SEBELUM tahun yang dipilih pada parameter [Select Year].
+IF YEAR([Order Date]) = [Select Year] - 1 THEN [Customers]
+END
+// ------------------------------------
+
+// ------------------------------------
+// Calculated Field: % Diff Customers
+// Desc: Menghitung persentase pertumbuhan atau penurunan kuantitas Year-over-Year (YoY) antara tahun yang dipilih (CY) dengan tahun sebelumnya (PY).
+(COUNTD([CY Customers]) - COUNTD([PY Customers])) / COUNTD([PY Customers])
+// -----------------------------------
+
+// ------------------------------------
+// Calculated Field: Highlight Max/Min Customers
+// Desc: Mengisolasi dan menampilkan nilai HANYA untuk titik data tertinggi (maksimum) dan terendah (minimum) dalam sebuah visualisasi.
+IF COUNTD([CY Customers]) = WINDOW_MAX(COUNTD([CY Customers]))
+THEN COUNTD([CY Customers])
+ELSEIF COUNTD([CY Customers]) = WINDOW_MIN(COUNTD([CY Customers]))
+THEN COUNTD([CY Customers])
+END
+// ------------------------------------
