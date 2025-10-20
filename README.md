@@ -6,21 +6,19 @@
   
 # 📠 Sales & Customer Performance Analysis
 
-## 🚀 Ringkasan Proyek
+## 🚀 Project Summary
 
-Welcome to the **Sales & Customer Performance Analysis Project** repository 🚀
+This project showcases an **End-to-End Data Analytics** workflow, focusing on transforming raw sales and customer data into an actionable **Business Intelligence (BI)** report. The analysis presents an overview of sales metrics and trends, including a **Year-over-Year (YoY)** comparison against the previous year's (PY) performance.
 
-This project demonstrates an End-to-End Data Analytics workflow, focusing on transforming raw sales and customer data into actionable Business Intelligence (BI) reports. The analysis provides to present an overview of sales metrics and trends used to analyze year-over-year sales performance and the current situation regarding sales trends, benchmarked against the Previous Year (PY).
-
-**Project Type**: End-to-End Data Analytics & Business Intelligence.
-
-**Tools Used**: Excel(csv), and Tableau for visualization.
+**✨ For the complete case study, final visualizations, and in-depth explanations, please visit [My Notion Portfolio](https://www.notion.so/Sales-Customer-Analysis-Performance-Dashboard-Project-1e26e9f3bfd6815cad0fdf8a0648d1f2?source=copy_link).**
 
 ---
-## 📌 Problem Statement
-Currently, core business data is often fragmented across separate systems (sales transactions, customer records, inventory levels), making it challenging for leadership to unify financial performance with customer behavior.
 
-From the screens, the key problems solved are:
+## 📌 Problem Statement
+
+Currently, core business data is often fragmented across separate systems (sales transactions, customer records, inventory), making it challenging for management to unify financial performance with customer behavior.
+
+Based on the dashboard screens, the key problems solved are:
 
 - **Fragmented Performance Monitoring** → Traditional reporting separates sales figures from customer activity, making it impossible to see the combined health of the business.
 - **Inability to Quantify Growth Drivers** → It is difficult to immediately quantify Year-over-Year (YoY) growth in **Sales (20.4%), Profit (12.5%),** and **Total Customers (8.6%)** to assess true business momentum.
@@ -30,123 +28,67 @@ From the screens, the key problems solved are:
 - **Untargeted Decision-Making** → Management lacked data to implement focused strategies. The consolidated view now allows for data-driven decisions on optimizing inventory (reducing loss-making products) and implementing targeted loyalty programs for the **Top 10 Customers by Profit**.
 
 ---
-## 🎯 Business Requirement
-Sales, Finance, and Marketing stakeholders require a **consolidated dashboard** to monitor annual sales growth, product profitability, and customer behavior across different dimensions.
 
-Based on the provided screens, the business requires:
+## 🛠️ Tech Stack & Tools
 
----
-## 💰 **Sales Page**
-
-The Sales Page focuses on financial KPIs and product performance.
-
- **A. Key Performance Indicator (KPI) Overview:**
-
-  - Summarize Total Sales, Total Profit, and Total Quantity for the Current Year (CY) and Previous Year (PY).
-  - Display the Percentage Change for all KPIs when comparing CY vs. PY (e.g., Sales Δ 20.4% vs. PY).
-
-**B. Sales & Profit Trend Analysis:**
-
-- Show monthly trend data for all three KPIs (Sales, Profit, Quantity) for both the Current Year and Previous Year.
-- Clearly identify and highlight the Highest Month and Lowest Month for easy analysis.
-
-**C. Product Subcategory Comparison:**
-
-- Compare sales performance across different Product Subcategories for the Current Year vs. Previous Year (implied by the bar chart structure).
-- Include a side-by-side comparison of Sales volume and Profit/Loss for each subcategory.
-
-**D. Weekly Sales & Profit Trend:**
-
-- Include weekly sales and profit data for the Current Year.
-- Display the Weekly Average value for both Sales (Avg. $14K) and Profit (Avg. $2K).
-- Highlight weekly performance trends that fall Above or Below the calculated average.
+* **Visualization & Analysis:** **Tableau Public**
+* **Calculations & Metrics:** **Calculated Fields**
+* **Data Source:** **CSV**
 
 ---
-## 👤 **Customer Page**
 
-The Customer Page focuses on engagement and segmentation (based on the second image).
-
-**A. Customer KPIs:**
-
-- Track key customer metrics: Total Customers, Total Sales Per Customer, and Total Orders.
-- Show the Percentage Change for these KPIs when comparing CY vs. PY (e.g., Total Orders Δ 28.3% vs. PY).
-
-**B. Customer Trend Analysis:**
-
-- Show monthly trends for Total Customers and Total Orders for both the Current Year and Previous Year.
-- Identify and highlight the Highest Month and Lowest Month.
-
-**C. Customer Loyalty Distribution:**
-
-- Display the Customer Distribution by Number of Orders to understand loyalty and repeat purchase behavior (e.g., 200 customers placed 1 order, 200 customers placed 2 orders).
-
-**D. Top 10 High-Value Customers:****
-
-- List the Top 10 Customers by Profit.
-- The table must include the Customer Rank, Last Order Date, 2024 Profit, 2024 Sales, and total Orders.
-
----
-## ⚙️ Design and Interactivity Requirements
-
-These requirements apply to both the Sales and Customer dashboards.
-
-**A. Dynamic Dashboard:**
-
-- The dashboard must allow users to inspect historical data by providing the flexibility to select the desired year (implied by the "2024 vs. 2023" indicator).
-- Provide users with the ability to easily navigate between the dashboards (e.g., dedicated navigation buttons/menu).
-- Ensure charts and graphs are interactive, allowing users to filter data by clicking on visuals.
-
-**B. Data Filtering:**
-
-- Allow users to filter data based on Product Information (such as Category and Subcategory).
-
-- Allow users to filter data based on Location Information (such as State and City).
-
----
-👉 With this structure, business stakeholders can:
-
-- Monitor financial and customer performance comprehensively.
-- Make data-driven decisions on product strategy, inventory optimization, and targeted customer loyalty programs.
-- Ensure the business is effectively converting new customers into loyal, profitable buyers.
-
----
 ## 📂 Repository Structure
 ```
-/
-├── datasets/                              # Contains raw datasets used for the project
-│    └── Customers.csv
-|    └── Location.csv
-|    └── Orders.csv
-|    └── Production.csv
+Sales-Customer-Analysis-Performance-Dashboard-Project/ 
+├── README.md                           # Main explanation for this project 
+│ 
+├── datasets/                           # Contains the raw sample data used 
+│ 
+├── calculated fields/                  # Contains .txt files with the main Calculated Fields formulas 
+│   ├── Sales_Metrics.txt 
+│   └── Customer_Metrics.txt 
+│ 
+├── docs/                               # Contains all documentation & screenshots 
+│   ├── Sales_Dashboard.png 
+│   ├── Customer_Dashboard.png 
+│   └── Dashboard_Interaction.gif
 │
-├── docs/                                  # Contains project documentation, reports, or dashboard exports
-│    └── Sales & Customer Dashboard.pdf
-│
-├── tableau/                               # Contains files related to the Tableau visualization
-│    └── Sales & Customer Dasahboard.twbx 
-│
-└── README.md                              # Project description and portfolio details
+└── tableau/                            # Contains files related to the Tableau visualization
+    └── Sales & Customer Dashboard.twbx
 ```
-
 ---
-## 🙍 About Me  
 
-Hi, I'm **Ahmad Zaki Amani** 👋  
+## 📊 Dashboard Visualizations
+Here is a preview of the main dashboard that has been developed:
 
-✨ I'm passionate about **Data Analytics** and **Business Intelligence**, focusing on building dashboards, creating data visualizations, and turning raw data into actionable insights.  
+### Sales Dashboard
+*Focuses on sales performance, product profitability, and trends over time.*
+![Sales Dashboard](docs/Sales_Dashboard.gif)
 
-💡 This project is part of my portfolio, where I showcase skills in:  
-- Data visualization & storytelling  
-- Dashboard design (Power BI, Tableau)  
-- Data transformation & analysis  
-- Business Intelligence solutions
+### Customer Dashboard
+*Focuses on customer segmentation, VIP customer identification, and loyalty analysis.*
+![Customer Dashboard](docs/Customer_Dashboard.gif)
 
-📫 Let’s connect and collaborate!  
+## 🙍 About Me
 
-[![Gmail](https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:ahmadzaki27.az@gmail.com) 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/ahmad-zaki-amani-ab091635b/)  
+Hello, I'm **Ahmad Zaki Amani** 👋
 
+✨ I have a strong interest in the fields of **Data Analytics** and **Business Intelligence**, especially in building dashboards, creating data visualizations, and turning raw data into meaningful insights.
+
+💡 This project is part of my portfolio, showcasing skills in:
+
+* Data visualization & storytelling
+* Dashboard design (Power BI, Tableau)
+* Data transformation & analysis
+* Business Intelligence solutions
+
+📫 Let's connect and collaborate!
+
+[![Gmail](https://img.shields.io/badge/Gmail-D14836?style=for-the-badge\&logo=gmail\&logoColor=white)](mailto:ahmadzaki27.az@gmail.com)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge\&logo=linkedin\&logoColor=white)](https://www.linkedin.com/in/ahmad-zaki-amani-ab091635b/)
+[![Notion](https://img.shields.io/badge/Notion-000?logo=notion&logoColor=fff)](https://www.notion.so/Portofolio-Data-Analysis-1e26e9f3bfd680fb9c92f7dc6734a391?source=copy_link)
 ---
+
 <p align="right"><a href="#top">Back To Top ⬆️</a></p>  
 </details>
 
