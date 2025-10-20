@@ -1,1 +1,68 @@
+// ===================================
+// SALES-PER-CUSTOMERS-METRICS
+// ===================================
+
+----------------------------------------------------------------------
+A. DEFINISI PARAMETER YEAR
+----------------------------------------------------------------------
+
+Nama Parameter: 
+Select Year
+
+Tipe Data: 
+Integer
+
+Nilai yang Diizinkan (Allowable Values): 
+List
+- 2021
+- 2022
+- 2023
+- 2024
+
+Tujuan:
+Menyediakan kontrol dropdown atau slider bagi pengguna untuk memilih tahun analisis di dasbor.
+
+----------------------------------------------------------------------
+B. CALCULATED FIELDS SALES PER CUSTOMERS
+----------------------------------------------------------------------
+
+// ------------------------------------
+// Calculated Field: Current Year
+// Desc: Untuk menentukan tahun yang dipilih pada parameter (Current Year/CY)
+[Select Year]
+// ------------------------------------
+
+// ------------------------------------
+// Calculated Field: Previous Year
+// Desc: Untuk menentukan tahun sebelumnya yang dipilih pada saat memilih tahun pada parameter (Previous Year/PY)
+[Select Year]-1
+// ------------------------------------
+
+// ------------------------------------
+// Calculated Field: CY Sales per Customer
+// Desc: Menghitung rata-rata nilai penjualan yang dihasilkan per pelanggan selama tahun berjalan (Current Year).
+SUM([CY Sales]) / COUNTD([CY Customers])
+// ------------------------------------
+
+// ------------------------------------
+// Calculated Field: PY Sales per Customer
+// Desc: Menghitung rata-rata nilai penjualan yang dihasilkan per pelanggan unik selama tahun sebelumnya (Previous Year).
+SUM([PY Sales]) / COUNTD([PY Customers])
+// ------------------------------------
+
+// ------------------------------------
+// Calculated Field: % Diff Sales per Customers
+// Desc: Menghitung persentase pertumbuhan atau penurunan dari metrik "Sales per Customer" secara Year-over-Year (YoY).
+([CY Sales per Customer] - [PY Sales per Customer]) / [PY Sales per Customer]
+// -----------------------------------
+
+// ------------------------------------
+// Calculated Field: Highlight Max/Min Customers
+// Desc: Mengisolasi dan menampilkan nilai HANYA untuk titik data tertinggi (maksimum) dan terendah (minimum) dalam sebuah visualisasi.
+IF [CY Sales per Customer] = WINDOW_MAX([CY Sales per Customer])
+THEN [CY Sales per Customer] 
+ELSEIF [CY Sales per Customer] = WINDOW_MIN([CY Sales per Customer])
+THEN [CY Sales per Customer]
+END
+// ------------------------------------
 
