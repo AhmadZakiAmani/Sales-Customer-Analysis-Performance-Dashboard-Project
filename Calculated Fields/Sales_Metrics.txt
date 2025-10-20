@@ -1,0 +1,70 @@
+// ===================================
+// SALES-METRICS
+// ===================================
+
+----------------------------------------------------------------------
+A. DEFINISI PARAMETER YEAR
+----------------------------------------------------------------------
+
+Nama Parameter: 
+Select Year
+
+Tipe Data: 
+Integer
+
+Nilai yang Diizinkan (Allowable Values): 
+List
+- 2021
+- 2022
+- 2023
+- 2024
+
+Tujuan:
+Menyediakan kontrol dropdown atau slider bagi pengguna untuk memilih tahun analisis di dasbor.
+
+----------------------------------------------------------------------
+B. CALCULATED FIELDS SALES
+----------------------------------------------------------------------
+
+// ------------------------------------
+// Measure: Current Year
+// Desc: Untuk menentukan tahun yang dipilih pada parameter (Current Year/CY)
+[Select Year]
+// ------------------------------------
+
+// ------------------------------------
+// Measure: Previous Year
+// Desc: Untuk menentukan tahun sebelumnya yang dipilih pada saat memilih tahun pada parameter (Previous Year/PY)
+[Select Year]-1
+// ------------------------------------
+
+// ------------------------------------
+// Calculated Field: CY Sales
+// Desc: Mengisolasi dan mengembalikan nilai penjualan HANYA untuk tahun yang dipilih pada parameter [Select Year].
+IF YEAR([Order Date]) = [Select Year] THEN [Sales]
+END
+// ------------------------------------
+
+// ------------------------------------
+// Calculated Field: PY Sales
+// Desc: Mengisolasi dan mengembalikan nilai penjualan HANYA untuk tahun SEBELUM tahun yang dipilih pada parameter [Select Year].
+IF YEAR([Order Date]) = [Select Year] - 1 THEN [Sales]
+END
+// ------------------------------------
+
+// ------------------------------------
+// Calculated Field: % Diff Sales
+// Desc: Menghitung persentase pertumbuhan atau penurunan penjualan Year-over-Year (YoY) antara tahun yang dipilih (CY) dengan tahun sebelumnya (PY).
+(SUM([CY Sales]) - SUM([PY Sales])) / SUM([PY Sales])
+// -----------------------------------
+
+// ------------------------------------
+// Calculated Field: Highlight Max/Min Sales
+// Desc: Mengisolasi dan menampilkan nilai HANYA untuk titik data tertinggi (maksimum) dan terendah (minimum) dalam sebuah visualisasi.
+IF SUM([CY Sales]) = WINDOW_MAX(SUM([CY Sales]))
+THEN SUM([CY Sales])
+ELSEIF SUM([CY Sales]) = WINDOW_MIN(SUM([CY Sales]))
+THEN SUM([CY Sales])
+END
+// ------------------------------------
+
