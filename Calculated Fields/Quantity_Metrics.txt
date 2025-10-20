@@ -1,1 +1,69 @@
+// ===================================
+// QUANTITY-METRICS
+// ===================================
 
+----------------------------------------------------------------------
+A. DEFINISI PARAMETER YEAR
+----------------------------------------------------------------------
+
+Nama Parameter: 
+Select Year
+
+Tipe Data: 
+Integer
+
+Nilai yang Diizinkan (Allowable Values): 
+List
+- 2021
+- 2022
+- 2023
+- 2024
+
+Tujuan:
+Menyediakan kontrol dropdown atau slider bagi pengguna untuk memilih tahun analisis di dasbor.
+
+----------------------------------------------------------------------
+B. CALCULATED FIELDS QUANTITY
+----------------------------------------------------------------------
+
+// ------------------------------------
+// Calculated Field: Current Year
+// Desc: Untuk menentukan tahun yang dipilih pada parameter (Current Year/CY)
+[Select Year]
+// ------------------------------------
+
+// ------------------------------------
+// Calculated Field: Previous Year
+// Desc: Untuk menentukan tahun sebelumnya yang dipilih pada saat memilih tahun pada parameter (Previous Year/PY)
+[Select Year]-1
+// ------------------------------------
+
+// ------------------------------------
+// Calculated Field: CY Quantity
+// Desc: Mengisolasi dan mengembalikan nilai kuantitas HANYA untuk tahun yang dipilih pada parameter [Select Year].
+IF YEAR([Order Date]) = [Select Year] THEN [Quantity]
+END
+// ------------------------------------
+
+// ------------------------------------
+// Calculated Field: PY Quantity
+// Desc: Mengisolasi dan mengembalikan nilai kuantitas HANYA untuk tahun SEBELUM tahun yang dipilih pada parameter [Select Year].
+IF YEAR([Order Date]) = [Select Year] - 1 THEN [Quantity]
+END
+// ------------------------------------
+
+// ------------------------------------
+// Calculated Field: % Diff Quantity
+// Desc: Menghitung persentase pertumbuhan atau penurunan kuantitas Year-over-Year (YoY) antara tahun yang dipilih (CY) dengan tahun sebelumnya (PY).
+(SUM([CY Quantity]) - SUM([PY Quantity])) / SUM([PY Quantity])
+// -----------------------------------
+
+// ------------------------------------
+// Calculated Field: Highlight Max/Min Quantity
+// Desc: Mengisolasi dan menampilkan nilai HANYA untuk titik data tertinggi (maksimum) dan terendah (minimum) dalam sebuah visualisasi.
+IF SUM([CY Quantity]) = WINDOW_MAX(SUM([CY Quantity]))
+THEN SUM([Quantityt])
+ELSEIF SUM([CY Quantity]) = WINDOW_MIN(SUM([CY Quantity]))
+THEN SUM([CY Quantity])
+END
+// ------------------------------------
