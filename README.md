@@ -217,11 +217,11 @@ Berikut adalah cuplikan dari dasbor utama yang telah dikembangkan:
 
 ### Sales Dashboard
 *Fokus pada kinerja penjualan, profitabilitas produk, dan tren dari waktu ke waktu.*
-![Sales Dashboard](docs/Sales_Dashboard.png)
+![Sales Dashboard](docs/Sales_Dashboard.gif)
 
 ### Customer Dashboard
 *Fokus pada segmentasi pelanggan, identifikasi pelanggan VIP, dan analisis loyalitas.*
-![Customer Dashboard](docs.Customer_Dashboard.png)
+![Customer Dashboard](docs/Customer_Dashboard.gif)
 
 ---
 ## 🙍 Tentang Saya
