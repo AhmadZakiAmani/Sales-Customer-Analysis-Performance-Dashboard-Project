@@ -27,13 +27,13 @@ B. CALCULATED FIELDS SALES
 ----------------------------------------------------------------------
 
 // ------------------------------------
-// Measure: Current Year
+// Calculated Field: Current Year
 // Desc: Untuk menentukan tahun yang dipilih pada parameter (Current Year/CY)
 [Select Year]
 // ------------------------------------
 
 // ------------------------------------
-// Measure: Previous Year
+// Calculated Field: Previous Year
 // Desc: Untuk menentukan tahun sebelumnya yang dipilih pada saat memilih tahun pada parameter (Previous Year/PY)
 [Select Year]-1
 // ------------------------------------
