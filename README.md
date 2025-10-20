@@ -4,7 +4,7 @@
   <summary>🇬🇧 Read In English (Click to open)</summary>
   <br>
   
-# 📠 Sales & Customer Performance Analysis
+# 📊 Sales & Customer Performance Analysis
 
 ## 🚀 Project Summary
 
@@ -100,7 +100,7 @@ Hello, I'm **Ahmad Zaki Amani** 👋
   <summary>🇮🇩 Baca dalam Bahasa Indonesia (Klik untuk membuka)</summary>
   <br>
 
-# 📠 Analisis Kinerja Penjualan & Pelanggan
+# 📊 Analisis Kinerja Penjualan & Pelanggan
 
 ## 🚀 Ringkasan Proyek
 
